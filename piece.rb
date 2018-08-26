@@ -1,5 +1,5 @@
 class Piece
-  attr_accessor :position
+  attr_accessor :position, :name
 
   def initialize(position, name)
     @position = position
@@ -20,6 +20,7 @@ class Piece
     end
     puts "\nTotal movable positions from your choosen position for the given piece #{piece} are: \n\n#{movable_positions.join(', ')}"
     puts "\n"
+    movable_positions
   end
 
   def get_valid_positions(direction, size)

@@ -4,4 +4,4 @@ source 'https://rubygems.org'
 gem 'terminal-table'
 
 #to write test cases
-gem 'rspec-rails', '~> 3.7'
+gem 'rspec'

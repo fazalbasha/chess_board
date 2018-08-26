@@ -24,7 +24,7 @@ class Chess
     char = str[0]
     pos = str[1].to_i
 
-    piece = Piece.new([pos,tiles_data[char]], name)
+    piece = Piece.new([pos, tiles_data[char]], name)
     piece.moves(@board)
   end
 
