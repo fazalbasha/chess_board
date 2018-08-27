@@ -23,8 +23,8 @@ class Chess
     str = gets.chomp.gsub(/\s+/, "").upcase
     char = str[0]
     pos = str[1].to_i
-
-    piece = Piece.new([pos, tiles_data[char]], name)
+    piece = Object.const_get(name)
+    piece = piece.new([pos, tiles_data[char]])
     piece.moves(@board)
   end
 

@@ -1,16 +1,15 @@
 class Piece
-  attr_accessor :position, :name
+  attr_accessor :position
 
-  def initialize(position, name)
+  def initialize(position=nil)
     @position = position
-    @name = name
   end
 
   def moves(board)
-    piece = Object.const_get(@name)
+    piece_name = self.class.name
     positions = []
-    piece.directions.each do |key, value|
-      result = (@name == "Knight") ? get_valid_positions_for_knight(value, board.size) : get_valid_positions(value, board.size)
+    self.directions.each do |key, value|
+      result = (piece_name == "Knight") ? get_valid_positions_for_knight(value, board.size) : get_valid_positions(value, board.size)
       positions << result
     end
 
@@ -18,7 +17,7 @@ class Piece
     positions.flatten(1).each do |b|
       movable_positions << board.cell[b[0] - 1][b[1] - 1]
     end
-    puts "\nTotal movable positions from your choosen position for the given piece #{piece} are: \n\n#{movable_positions.join(', ')}"
+    puts "\nTotal movable positions from your choosen position for the given piece #{piece_name} are: \n\n#{movable_positions.join(', ')}"
     puts "\n"
     movable_positions
   end

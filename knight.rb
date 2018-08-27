@@ -1,5 +1,5 @@
 class Knight < Piece
-  def self.directions
+  def directions
     {
       north_east: [-2, 1],
       north_west: [-2, -1],

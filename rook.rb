@@ -1,6 +1,6 @@
 class Rook < Piece
 
-  def self.directions
+  def directions
     {
       front: [-1, 0],
       back: [1, 0],

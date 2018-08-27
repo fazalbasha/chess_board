@@ -1,8 +1,8 @@
 class Queen < Piece
 
-  def self.directions
-    queen_directions = Bishop.directions
-    queen_directions.merge(Rook.directions)
+  def directions
+    queen_directions = Bishop.new.directions
+    queen_directions.merge(Rook.new.directions)
   end
 
 end
