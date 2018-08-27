@@ -1,3 +1,4 @@
+require './board'
 require './piece'
 require './bishop'
 require './rook'
@@ -8,11 +9,11 @@ describe 'Piece' do
   let(:board) { Board.new(8) }
 
   describe 'Bishop Piece' do
-    let(:piece_bishop) { Piece.new([2,4], "Bishop") }
+    let(:piece_bishop) { Bishop.new([2,4]) }
 
     it 'should return position and name of piece' do
       expect(piece_bishop.position).to eq([2,4])
-      expect(piece_bishop.name).to eq("Bishop")
+      expect(piece_bishop.class.name).to eq("Bishop")
     end
 
     it 'should return possible moves' do
@@ -26,11 +27,11 @@ describe 'Piece' do
   end
 
   describe 'Rook Piece' do
-    let(:piece_rook) { Piece.new([2,4], "Rook") }
+    let(:piece_rook) { Rook.new([2,4]) }
 
     it 'should return position and name of piece' do
       expect(piece_rook.position).to eq([2,4])
-      expect(piece_rook.name).to eq("Rook")
+      expect(piece_rook.class.name).to eq("Rook")
     end
 
     it 'should return possible moves' do
@@ -44,11 +45,11 @@ describe 'Piece' do
   end
 
   describe 'Knight Piece' do
-    let(:piece_knight) { Piece.new([1,1], "Knight") }
+    let(:piece_knight) { Knight.new([1,1]) }
 
     it 'should return position and name of piece' do
       expect(piece_knight.position).to eq([1,1])
-      expect(piece_knight.name).to eq("Knight")
+      expect(piece_knight.class.name).to eq("Knight")
     end
 
     it 'should return possible moves' do
@@ -62,11 +63,11 @@ describe 'Piece' do
   end
 
   describe 'Queen Piece' do
-    let(:piece_queen) { Piece.new([1,1], "Queen") }
+    let(:piece_queen) { Queen.new([1,1]) }
 
     it 'should return position and name of piece' do
       expect(piece_queen.position).to eq([1,1])
-      expect(piece_queen.name).to eq("Queen")
+      expect(piece_queen.class.name).to eq("Queen")
     end
 
     it 'should return possible moves' do
